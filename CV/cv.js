@@ -31,6 +31,37 @@ function checkTime(i) {
   }
   return i;
 }
-setInterval(() => {
-  document.title = new Date().toLocaleTimeString();
-}, 1);
+
+document.getElementById('fetchUserData').addEventListener('click', fetchUserData);
+
+function fetchUserData(){
+  let menus= document.getElementsByClassName("section");
+  for(let i=0;i<menus.length;i++)
+		menus[i].style.display = "none";
+  fetch('https://reqres.in/api/users')
+      .then(response => response.json())
+      .then(users => {
+        let output = '<h2>Lists of Users</h2>';
+        output += '<ul>';
+        users.data.map(user =>
+        {
+          output += `
+                            <li>
+                                ${user.first_name} ${user.last_name}
+                            </li>
+                        `;
+        });
+        output += '</ul>'
+        document.getElementById("response").innerHTML = output;
+        let show = document.getElementById("contactList");
+       show.style.display='block';
+      });
+}
+
+function navButton() {
+    let menus = document.getElementsByClassName("section");
+    let contact = document.getElementById("contactList");
+        contact.style.display = 'none';
+    for (let i = 0; i < menus.length; i++)
+        menus[i].style.display = "block";
+}

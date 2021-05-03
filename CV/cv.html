@@ -10,18 +10,28 @@
 <div id="fb-root"></div>
 <nav id="nav" >
  <ul >
-  <li><a href="#about">HOME</a></li>
-  <li><a href="#skills">Skills</a></li>
-  <li><a href="#exp">Experience</a></li>
-  <li><a href="#port">Portfolio</a></li>
-  <li><a href="#education">Education</a></li>
-  <li><a href="#contact">Contact Me</a></li>
+  <li><a href="#about" onclick="navButton()">HOME</a></li>
+  <li><a href="#skills" onclick="navButton()">Skills</a></li>
+  <li><a href="#exp" onclick="navButton()">Experience</a></li>
+  <li><a href="#port" onclick="navButton()">Portfolio</a></li>
+  <li><a href="#education" onclick="navButton()">Education</a></li>
+  <li><a href="#contact" onclick="navButton()">Contact Me</a></li>
+  <li style="float: right"><a href="#contactList" id="fetchUserData">contact list</a></li>
  </ul>
 </nav>
 
+<section id="contactList" style="display: none">
+<!--
+     <h4>About me</h4>
+-->
+<br>
+<br>
+ <div id="response">
+
+     </div>
+</section>
+
 <section id="about" class="section">
-
-
  <h4>About me</h4>
     <br>
 
@@ -85,7 +95,6 @@
 			</form>
 
 </section>
-
 
 </body>
 <script src="cv.js"></script>
