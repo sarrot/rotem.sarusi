@@ -41,7 +41,8 @@
         </form>
     </div>
     {% else %}
-        <h4>Logged-in, {{ user }}</h4>
+        <h4>Logged-in, {{ user['userName'] }}</h4>
     {% endif %}
+    <a href="{{ url_for('logout') }}" >logout</a>
 </body>
 </html>

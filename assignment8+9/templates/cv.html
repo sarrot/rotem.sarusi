@@ -1,3 +1,4 @@
+{#tyy#}
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,9 @@
         <li><a href="#education" onclick="navButton()">Education</a></li>
         <li><a href="#contact" onclick="navButton()">Contact Me</a></li>
         <li style="float: right"><a href="#contactList" id="fetchUserData">contact list</a></li>
+        {% if  session['userName'] %}
         <li style="float: right; display: block; color: aquamarine; padding: 14px 16px;" id="user">Logged-in, {{ session['userName'] }}</li>
+        {% endif %}
     </ul>
 </nav>
 
